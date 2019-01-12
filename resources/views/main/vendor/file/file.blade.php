@@ -1,6 +1,7 @@
 @extends('main.vendor.app.layouts.index')
 @section('title','libros')
 @section('content')
+
 @include('main.vendor.dasboard')
 <input id="inputFile" type="file" onchange="convertToBase64();" />
 <script type="text/javascript">
