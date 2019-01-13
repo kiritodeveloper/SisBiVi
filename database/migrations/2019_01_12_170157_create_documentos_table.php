@@ -18,6 +18,8 @@ class CreateDocumentosTable extends Migration
             $table->string('nombre');
             $table->longText('descripcion');
             $table->longText('documento');
+            $table->integer('categoria_id')->unsigned();
+            $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });
     }

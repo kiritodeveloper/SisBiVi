@@ -16,6 +16,9 @@ class CreateCarrerasTable extends Migration
         Schema::create('carreras', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->integer('facultad_id')->unsigned();
+            $table->foreign('facultad_id')->references('id')->on('facultads');
+            //$table->foreign('facultad_id')->references('id')->on('facultads');
             $table->timestamps();
         });
     }

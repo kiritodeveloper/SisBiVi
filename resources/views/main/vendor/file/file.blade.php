@@ -1,4 +1,4 @@
-@extends('main.vendor.app.layouts.index')
+{{-- @extends('main.vendor.app.layouts.index')
 @section('title','libros')
 @section('content')
 
@@ -33,4 +33,4 @@
 @endsection
 
 
-
+ --}}

@@ -20,3 +20,11 @@ Route::get('/kirito','FileController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/libros', 'DocumentoController@index')->name('documentos.index');
+
+Route::get('/documento/nuevo', 'DocumentoController@create')->name('documentos.create');
+    
+Route::post('/documento/crear','DocumentoController@store');
+Route::get('/categoria/nuevo', 'CategoriaController@create')->name('categorias.create');
+    
+Route::post('/categoria/crear','CategoriaController@store');

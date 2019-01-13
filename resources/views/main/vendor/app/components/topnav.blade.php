@@ -4,10 +4,16 @@
                <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
             </figure>
             <li style="color:#fff; cursor:default;">
-                <span class="all-tittles">Admin Name</span>
+                <span class="all-tittles"> {{ Auth::user()->name }}</span>
             </li>
-            <li  class="tooltips-general exit-system-button" data-href="{{ route('logout') }}" data-placement="bottom" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="Salir del sistema">
+            <li  class="tooltips-general exit-system-button" data-href="{{ route('logout') }}" data-placement="bottom" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();" title="Salir del sistema">
                 <i class="zmdi zmdi-power"></i>
+             </a>
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                 @csrf
+             </form>
             </li>
             <li  class="tooltips-general search-book-button" data-href="searchbook.html" data-placement="bottom" title="Buscar libro">
                 <i class="zmdi zmdi-search"></i>
@@ -20,19 +26,3 @@
             </li>
         </ul>
     </nav>
-
-{{--  <ul class="list-unstyled full-reset">
-        <figure>
-            <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box">
-             </figure>
-             <li style="color:#fff; cursor:default;">
-                 <span class="all-tittles">Admin Name</span>
-             </li>
-        <li style="color:#fff; cursor:default;">
-                <span class="all-tittles">Admin Name</span>
-        </li>
-        <a class="dropdown-item" href="{{ route('logout') }}"
-        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-         {{ __('Logout') }}
-        </a>
-</ul>  --}}
