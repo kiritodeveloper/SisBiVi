@@ -34,3 +34,13 @@
 
 
  --}}
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script>
+    $( document ).ready(function() {
+  
+        var a = Math.floor(100000 + Math.random() * 900000);   
+        a = String(a);
+        a = a.substring(0,4);
+        alert( "valor:" +a ); 
+    });
+ </script>

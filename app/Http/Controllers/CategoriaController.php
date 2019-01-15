@@ -37,6 +37,7 @@ class CategoriaController extends Controller
         $data = request()->all();
         
         $new=new Categoria(request()->all());
+        //dd($new);
         
         $new->save();
     }

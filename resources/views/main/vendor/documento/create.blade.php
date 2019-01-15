@@ -21,7 +21,7 @@
                             <label>Descripcion</label>
                         </div>
                         <input id="inputFile" type="file" onchange="convertToBase64();" />
-                        <textarea name="documento" rows="0.0" id="resultado" cols="50"  ></textarea>
+                        <textarea name="documento" rows="0.0" id="resultado" cols="50" style="visibility:hidden" ></textarea>
                             <script type="text/javascript">
                                 function convertToBase64() {
                                     //Read File
