@@ -28,3 +28,14 @@ Route::post('/documento/crear','DocumentoController@store');
 Route::get('/categoria/nuevo', 'CategoriaController@create')->name('categorias.create');
     
 Route::post('/categoria/crear','CategoriaController@store');
+
+Route::get('/hola','FileController@create')->name('hola.create');
+
+Route::post('/hola','FileController@store');
+	
+Route::resource('/jiji', 'FileController');
+
+Route::get('/upload', function () {
+    return view('upload');
+});
+Route::resource('pictures', 'PictureController', ['only' => ['index', 'store', 'destroy']]);

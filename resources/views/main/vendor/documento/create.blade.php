@@ -4,7 +4,7 @@
 <div class="container-fluid">
         <div class="container-flat-form">
             <div class="title-flat-form title-flat-blue">Agregar Un Nuevo Documento</div>
-            <form method="POST" action="{{ url('/documento/crear') }}">
+            <form method="POST" action="{{ url('/documento/crear') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row">
                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -20,7 +20,17 @@
                             <span class="bar"></span>
                             <label>Descripcion</label>
                         </div>
-                        <input id="inputFile" type="file" onchange="convertToBase64();" />
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">categoria</label>
+                            <select name="categoria_id" multiple class="form-control" id="exampleFormControlSelect2">
+                                @foreach($categorias as $categoria)
+                                    <option value="{{$categoria->id}}">{{$categoria->nombre}} </option>
+                                @endforeach
+                            </select>
+                          </div>
+                        <input type="file" name="documento" class="upload" />
+                        {{-- <input id="inputFile" type="file" onchange="convertToBase64();" />
                         <textarea name="documento" rows="0.0" id="resultado" cols="50" style="visibility:hidden" ></textarea>
                             <script type="text/javascript">
                                 function convertToBase64() {
@@ -45,7 +55,7 @@
                                         fileReader.readAsDataURL(fileToLoad);
                                     }
                                 }
-                            </script>  
+                            </script>   --}}
                         <p class="text-center">
                             <button type="reset" class="btn btn-info" style="margin-right: 20px;"><i class="zmdi zmdi-roller"></i> &nbsp;&nbsp; Limpiar</button>
                             <button type="submit" class="btn btn-primary"><i class="zmdi zmdi-floppy"></i> &nbsp;&nbsp; Guardar</button>

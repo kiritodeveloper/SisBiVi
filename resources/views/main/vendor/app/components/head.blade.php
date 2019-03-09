@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/basic.min.css">
+    <link rel="stylesheet" href="/css/dropzone.css">
+    <link rel="stylesheet" href="/css/dropzone.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="/js/modernizr.js"></script>
@@ -17,4 +21,8 @@
     <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/dropzone.js"></script>
+    <script src="/js/dropzone-amd-module.js"></script>
+    <script src="/js/dropzone-amd-module.min.js"></script>
+    <script src="/js/dropzone.min.js"></script>
 </head>

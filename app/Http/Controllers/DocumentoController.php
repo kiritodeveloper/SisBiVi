@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
 use App\documento;
+use App\categoria;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +19,11 @@ class DocumentoController extends Controller
      */
     public function index()
     {
+        $categorias =categoria::all();
         $documentos = documento::all();
         $title = 'Listado de libros';
+        $categorias = categoria::find($id);
+        dd($categorias);
         //dd($documentos);
         return view('main.vendor.documento.index',compact('documentos','title'));
     }
@@ -30,7 +35,9 @@ class DocumentoController extends Controller
      */
     public function create()
     {
-        return view('main.vendor.documento.create');  
+        $categorias =categoria::all();
+        //$categorias = categoria::find($id);
+        return view('main.vendor.documento.create',compact('categorias'));  
     }
 
     /**
@@ -44,6 +51,8 @@ class DocumentoController extends Controller
         $data = request()->all();
         
         $new=new Documento(request()->all());
+
+        dd($new);
         
         $new->save();
     }
